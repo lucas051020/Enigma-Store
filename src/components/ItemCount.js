@@ -1,0 +1,54 @@
+import React from 'react'
+import './ItemCount.css'
+import { useState, useEffect } from 'react'
+
+const ItemCount = ({initial, stock}) => {
+    const [ItemCount, setCount] = useState(initial);
+    const [addTheCart, setAddCart] = useState(false);
+    
+    const sumar = () => {
+        if (ItemCount < stock){ 
+            setCount(ItemCount + 1);
+        }
+    }
+
+    const restar = () => {
+      if(ItemCount > initial) {
+        setCount(ItemCount - 1);
+      }
+    };
+
+    const addCart = () => {
+      setCount(ItemCount);
+      setAddCart(!addTheCart);
+      console.log('Me agregue al carrito');
+    };
+
+    useEffect(() => {
+      console.log('Me ejecute');
+    
+      return () => {
+        <>
+            <h1>Carrito</h1>
+        </>
+      }
+
+    },[addTheCart]); //! Array de dependencias
+    
+  return (
+    <div className="container">
+      <button onClick={() => restar()} type="button" className="btn btn-primary btn-count">
+        -
+      </button>
+      <span className="btn-count">{ItemCount}</span>
+      <button onClick={() => sumar()} type="button" className="btn btn-primary btn-count">
+        +
+      </button>
+      <button onClick={() => addCart()} type="button" className="btn btn-primary btn-cart">
+        Agregar Al Carrito
+      </button>
+    </div>
+  );
+}
+
+export default ItemCount
