@@ -11,13 +11,8 @@ import {
 const App = () => {
   return (
     <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<ItemListContainer name="Lucas Alastuey" />}/>
-          <Route path="category" element={<ItemListContainer name="Lucas Alastuey" />}/>
-        </Routes>
-      </Router>
+      <Navbar />
+      <ItemListContainer name="Lucas Alastuey" />
     </>
   );
 };
