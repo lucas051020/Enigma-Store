@@ -1,23 +1,28 @@
-import ItemCount from "./ItemCount/ItemCount";
-import ItemList from "./ItemList";
+import ItemList from "./ItemsProducts/ItemList";
 import fetchData from "./utils/fetchData";
 import { useEffect, useState } from 'react'
+import { useParams } from "react-router-dom";
 import products from "./utils/products"
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
     const [data, setData] = useState([]);
+    const id  = useParams();
 
     useEffect(() => {
-      fetchData(2000, products)
+      if(id){
+        fetchData(2000, products.filter(category => category.id == id))
         .then(result => setData(result))
         .catch(err => console.log(err));
-    });
+      } else {
+        fetchData(2000, products)
+        .then(result => setData(result))
+        .catch(err => console.log(err));
+      }
+    }, [id]);
 
     return (
       <>
-        <h1>Alumno: {props.name}</h1>
         <ItemList items={data} />
-        <ItemCount initial={1} stock={10} />
       </>
     );
 };

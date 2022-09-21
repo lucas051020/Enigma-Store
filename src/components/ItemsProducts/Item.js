@@ -9,7 +9,7 @@ const Item = ({img, title, cost}) => {
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">${cost}</p>
-                <a href="#" className="btn btn-primary">+ Detalles</a>
+                <a href="#" className="btn btn-primary">+ Details</a>
             </div>
         </div>
     </>
