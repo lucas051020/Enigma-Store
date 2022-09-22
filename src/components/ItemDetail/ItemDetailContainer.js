@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         fetchData(2000, products[5])
             .then(result => setData(result))
-            .cath(err => console.log(err));
+            .catch(err => console.log(err));
     }, []);
 
   return (

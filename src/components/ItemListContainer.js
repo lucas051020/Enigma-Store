@@ -6,11 +6,11 @@ import products from "./utils/products"
 
 const ItemListContainer = () => {
     const [data, setData] = useState([]);
-    const id  = useParams();
+    const { id }  = useParams();
 
     useEffect(() => {
       if(id){
-        fetchData(2000, products.filter(category => category.id == id))
+        fetchData(2000, products.filter(category => category.categoryId === id))
         .then(result => setData(result))
         .catch(err => console.log(err));
       } else {

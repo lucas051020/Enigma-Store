@@ -23,14 +23,13 @@ const ItemDetail = ({item}) => {
             <p>{item.description}</p>
             <h3>${item.cost}</h3>
             <h5 className="card-subtitle mb-2 text-muted">Stock: {item.stock}</h5>
-            
           </section>
         </div>
       }
       {
-        itemCount === 0 ?
-        <ItemCount initial={itemCount} stock={item.stock} onAdd={onAdd} /> :
-        <Link to="/cart"><button type="button" className="btn btn-danger">Checkout</button></Link>
+        itemCount === 0 
+        ? <ItemCount initial={itemCount} stock={item.stock} onAdd={onAdd} />
+        : <Link to="/cart"><button type="button" className="btn btn-danger">Checkout</button></Link>
       }
     </>
   );
