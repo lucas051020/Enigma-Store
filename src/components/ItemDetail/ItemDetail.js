@@ -10,7 +10,7 @@ const ItemDetail = ({item}) => {
   const onAdd = (qty) => {
     alert("You have selected " + qty + " items!");
     setItemCount(qty);
-    ctx.addItem(item, quantity);
+    ctx.addItem(item, qty);
   }
 
   return (
