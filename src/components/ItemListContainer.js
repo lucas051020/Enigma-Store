@@ -4,36 +4,28 @@ import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 import products from "./utils/products"
 import {db} from "./utils/firebaseConfig"
-import { collection, getDocs, where, query } from "firebase/firestore";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
     const [data, setData] = useState([]);
     const { id }  = useParams();
 
-    useEffect(async () => {
+    useEffect(() => {
+      const querydb = getFirestore();
+      const queryCollection = collection(querydb, 'products');
+
       if(id){
-        const q = query(collection(db, "products"), where('categoryId','==', id));
-        const querySnapshot = await getDocs(q)
-        const dataFromFireStore = querySnapshot.docs.map(item => ({
-          id: item.id,
-          ...item.data()
-        }));
-        //console.log(dataFromFireStore);
-        setData(dataFromFireStore)
+        const queryFilter = query(queryCollection, where('categoryId', '==', id));
+        getDocs(queryFilter)
+        .then(res => setData(res.docs.map(product => ({ id: product.id, ...product.data() } ))));
       } else {
-        const querySnapshot = await getDocs(collection(db, "products"));
-        const dataFromFireStore = querySnapshot.docs.map(item => ({
-          id: item.id,
-          ...item.data()
-        }));
+        getDocs(queryCollection)
+          .then(res => setData(res.docs.map(product => ({ id: product.id, ...product.data() } ))));
       }
+
+
     }, [id]);
 
-    useEffect(() => {
-      return(() => {
-        setData([]);
-      })
-    })
 
     return (
       <>
