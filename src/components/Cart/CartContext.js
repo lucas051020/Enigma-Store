@@ -17,10 +17,10 @@ const CartContextProvider = ({ children }) => {
 
     console.log('carrito: ', cartList);
 
-    // const totalCost = () => {
-    //   let cost = cartList.map (item => item.cost);
-    //   return cost.reduce((prev, act) => prev + act.quantity * act.cost, 0);
-    // }
+    const totalCost = () => {
+      let cost = cartList.map (item => item.cost);
+      return cost.reduce((prev, act) => prev + act.quantity * act.cost, 0);
+    }
 
     const totalProducts = () => cartList.reduce((acc, currentProduct) => acc + currentProduct.quantity, 0);
 
@@ -43,13 +43,10 @@ const CartContextProvider = ({ children }) => {
         cartList,
         addItem,
         clear,
-        //calcTotal,
         removeItem,
         isInCart,
         totalProducts,
-        //calcDiscount,
-        //totalCost,
-        //totalPrice
+        totalCost,
       }} >
         {children}
     </CartContext.Provider>

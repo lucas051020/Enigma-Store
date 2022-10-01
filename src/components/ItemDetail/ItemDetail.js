@@ -24,6 +24,7 @@ const ItemDetail = ({item}) => {
           <section className="column">
             <h1>{item.title}</h1>
             <p>{item.description}</p>
+            <p>Model: {item.modelId}</p>
             <h3>${item.cost}</h3>
             <h5 className="card-subtitle mb-2 text-muted">Stock: {item.stock}</h5>
           </section>

@@ -1,9 +1,6 @@
 import ItemList from "./ItemsProducts/ItemList";
-import fetchData from "./utils/fetchData";
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
-import products from "./utils/products"
-import {db} from "./utils/firebaseConfig"
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
@@ -26,6 +23,7 @@ const ItemListContainer = () => {
 
     }, [id]);
 
+    
 
     return (
       <>

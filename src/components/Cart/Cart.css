@@ -12,12 +12,23 @@
     float: right;
 }
 
+.item-cart{
+    flex-direction: column;
+    margin: 1em;
+}
+
 .img-cart{
     width: 30vh;
     height: 30vh;
 }
 
-.order-sumary{
+.item-price{
+    margin: auto;
+}
+
+.order-summary{
     float: right;
     align-items: right;
+    margin: 2.5em;
+    border-color: black;
 }
