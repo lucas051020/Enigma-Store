@@ -21,7 +21,6 @@ const ItemCount = ({initial, stock, onAdd}) => {
     const addCart = () => {
       setCount(ItemCount);
       setAddCart(!addTheCart);
-      console.log('Me agregue al carrito');
     };
 
     useEffect(() => {

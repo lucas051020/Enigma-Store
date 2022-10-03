@@ -82,8 +82,8 @@ const Cart = () => {
           <div className='container '>
             <section className='order-summary'>
                   <h3>Order Summary</h3>
-                  <p>Subtotal: $</p>
-                  <h4>Total: {ctx.totalCost()}</h4>
+                  <p>Subtotal: ${ctx.totalCost()}</p>
+                  <h4>Total: ${ctx.totalCost()}</h4>
                   <button type="button" onClick={createOrder} className="btn btn-success">Finish Shopping</button>
             </section>
           </div>  

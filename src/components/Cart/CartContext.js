@@ -1,7 +1,6 @@
 import { createContext, useState } from "react";
 export const CartContext = createContext();
  
-
 const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
@@ -15,11 +14,8 @@ const CartContextProvider = ({ children }) => {
       }
     }
 
-    console.log('carrito: ', cartList);
-
     const totalCost = () => {
-      let cost = cartList.map (item => item.cost);
-      return cost.reduce((prev, act) => prev + act.quantity * act.cost, 0);
+      return cartList.reduce((prev, act) => prev + act.quantity * act.cost, 0);
     }
 
     const totalProducts = () => cartList.reduce((acc, currentProduct) => acc + currentProduct.quantity, 0);
