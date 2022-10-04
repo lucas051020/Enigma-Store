@@ -24,8 +24,6 @@ const ItemCount = ({initial, stock, onAdd}) => {
     };
 
     useEffect(() => {
-      console.log('Me ejecute');
-    
       return () => {
         <>
             <h1>Carrito</h1>

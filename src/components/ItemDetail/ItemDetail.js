@@ -18,7 +18,7 @@ const ItemDetail = ({item}) => {
       {
         <div className="d-flex">
           <section>
-            <img src={item.img} className="img-detail" alt="image detail" />
+            <img src={item.img} className="img-detail" alt={item.title} />
           </section>
 
           <section className="column">

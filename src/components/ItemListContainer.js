@@ -20,10 +20,7 @@ const ItemListContainer = () => {
           .then(res => setData(res.docs.map(product => ({ id: product.id, ...product.data() } ))));
       }
 
-
     }, [id]);
-
-    
 
     return (
       <>
