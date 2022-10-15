@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Enigma-Store/static/css/main.8320884a.css",
+    "main.js": "/Enigma-Store/static/js/main.5bd18b6c.js",
+    "static/js/787.b6f1defa.chunk.js": "/Enigma-Store/static/js/787.b6f1defa.chunk.js",
+    "index.html": "/Enigma-Store/index.html",
+    "main.8320884a.css.map": "/Enigma-Store/static/css/main.8320884a.css.map",
+    "main.5bd18b6c.js.map": "/Enigma-Store/static/js/main.5bd18b6c.js.map",
+    "787.b6f1defa.chunk.js.map": "/Enigma-Store/static/js/787.b6f1defa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8320884a.css",
+    "static/js/main.5bd18b6c.js"
+  ]
+}
